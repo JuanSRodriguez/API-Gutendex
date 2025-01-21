@@ -1,0 +1,39 @@
+# Desafio Literalura API
+
+Este proyecto es una aplicación Spring Boot diseñada para interactuar con la API de Gutendex para buscar libros y guardar información de libros localmente.
+
+## Descripción
+
+La aplicación proporciona las siguientes funcionalidades principales:
+
+1.  **Búsqueda de Libros:** Permite a los usuarios buscar libros en la API de Gutendex utilizando diversos criterios de búsqueda, como título, autor, año de publicación y más.
+2.  **Guardar Libros:** Permite a los usuarios guardar información de libros (título, autor e idioma) en una base de datos PostgreSQL local.
+
+## Tecnologías Utilizadas
+
+*   **Java 17:** El lenguaje de programación principal para el backend.
+*   **Spring Boot:** Un framework para construir aplicaciones web basadas en Java.
+*   **Spring Data JPA:** Utilizado para manejar las interacciones con la base de datos PostgreSQL.
+*   **PostgreSQL:** La base de datos utilizada para el almacenamiento local de la información de los libros.
+*   **Gutendex API:** Una API pública que proporciona acceso al catálogo del Proyecto Gutenberg.
+*   **Lombok:** Utilizado para generar automáticamente código repetitivo como getters, setters y constructores.
+*   **Postman:** Utilizado para pruebas y desarrollo de la API.
+
+
+## Estructura del Código
+
+*   `com.example.demo.controller`: Contiene la clase `BookController`, que maneja las peticiones de la API.
+*   `com.example.demo.dto`: Contiene los Objetos de Transferencia de Datos (DTOs) para peticiones y respuestas (clases `Book`, `BookResponse` y `Person`.)
+*   `com.example.demo.identity`: Contiene las clases entidad como `Book` que se mapean a las tablas de la base de datos.
+*   `com.example.demo.repository`: Contiene `BookRepository` que gestiona la interacción con la base de datos para la entidad `Book`.
+*   `com.example.demo.service`: Contiene la clase `GutendexService` para interactuar con la API externa.
+*   `com.example.demo`: Contiene la clase principal de la aplicación `DesafioLiteraluraApplication`.
+
+## Notas
+
+*   Esta es una implementación básica. Se podrían incluir mejoras adicionales como:
+    *   Manejo de errores y validación
+    *   Paginación para resultados de la base de datos local
+    *   Almacenamiento en caché de respuestas de la API para un mejor rendimiento
+    *   Opciones de búsqueda más sofisticadas.
+* Asegúrate de que la clase `GutendexService` implemente la lógica para obtener los libros de la API utilizando un cliente HTTP y para manejar los diferentes parámetros de búsqueda.
